@@ -106,7 +106,6 @@ export const getMovieDetails = (db: Database, req: Request, res: Response): void
                 const { rating, ...movieWithoutRatings } = movies[0];
                 getRottenTomatoesScore(imdbId)
                     .then((rottenTomatoesScore: number) => {
-                        // Step 3: Modify the response by adding Rotten Tomatoes score
                         const movieDetails: MovieDetail = {
                             ...movieWithoutRatings,
                             ratings: [
@@ -121,11 +120,9 @@ export const getMovieDetails = (db: Database, req: Request, res: Response): void
                             ]
                         };
         
-                    // Step 4: Send the combined response
                     res.send(movieDetails);
                 })
                 .catch((err: any) => {
-                    // Handle error if Rotten Tomatoes score could not be fetched
                     res.status(500).send(`Error fetching Rotten Tomatoes score: ${JSON.stringify(err)}`);
                 });
             
@@ -208,18 +205,17 @@ export const getMoviesByGenre = (db: Database, req: Request, res: Response): voi
             return genres.some((g: any) => g.name.toLowerCase() === genre.toLowerCase());
         });
 
-            // Return the filtered list of movies
         if (filteredMovies.length === 0) {
             res.status(404).send('No movies found for the given genre');
             return;
         }
 
         // Format the movies data
-        const newMovies: Movie[] = filteredMovies.map(movie => ({
+        const formattedMovies: Movie[] = filteredMovies.map(movie => ({
             ...movie,
             budget: `$${movie.budget.toLocaleString()}`,
         }));
 
-        res.send(newMovies);
+        res.send(formattedMovies);
   });
 };
