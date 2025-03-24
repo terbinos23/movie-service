@@ -7,7 +7,7 @@ const logger = (req: Request, res: Response, next: NextFunction) => {
     const status = res.statusCode;
     const duration = Date.now() - startTime;
 
-    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path} - ${status} - ${duration}ms`);
+    console.log(`[${new Date().toISOString()}] | method=${req.method} | path=${req.originalUrl} | status=${status} | duration=${duration}ms`);
   });
 
   next();
