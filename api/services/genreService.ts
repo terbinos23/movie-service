@@ -1,6 +1,5 @@
 import { Database } from "sqlite3";
 
-
 export const fetchAllGenres = async (db: Database): Promise<null | any[]> => {
     const query = 'SELECT * FROM movies;';
 

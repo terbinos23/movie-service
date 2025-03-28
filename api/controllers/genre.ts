@@ -1,5 +1,6 @@
 import { Database } from 'sqlite3';
 import { Request, Response } from 'express';
+
 import { fetchAllGenres } from '../services/genreService';
 
 export const getAllGenres = async (db: Database, _: Request, res: Response): Promise<void> => {

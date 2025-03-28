@@ -1,5 +1,6 @@
 import { Database } from 'sqlite3';
 import { Request, Response } from 'express';
+
 import { fetchRatings } from '../services/ratingService';
 
 export const getRatings = async (db: Database, req: Request, res: Response): Promise<void> => {
