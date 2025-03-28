@@ -2,9 +2,9 @@ import dotenv  from 'dotenv'
 import express from 'express';
 
 import healthRouter from './routes/health';
-import genresRouter from './routes/genres';
-import ratingsRouter from './routes/ratings';
-import moviesRouter from './routes/movies';
+import genresRouter from './routes/genre';
+import ratingsRouter from './routes/rating';
+import moviesRouter from './routes/movie';
 import logger from './utils/logger';
 
 dotenv.config();

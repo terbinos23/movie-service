@@ -6,7 +6,7 @@ interface Rating {
 export interface MovieDetail {
     imdbId: string;
     title: string;
-    // description: string; TBD
+    overview: string; // TBD overview may be
     releaseDate: string;
     budget: string;
     runtime: number;

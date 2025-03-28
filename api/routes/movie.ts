@@ -2,7 +2,7 @@ import path from 'path';
 import { Request, Response, Router } from 'express';
 
 import { openDatabase } from '../db/db';
-import { getAllMovies, getMovie, getMovieDetails, getMoviesByYear, getMoviesByGenre } from '../controllers/movies';
+import { getAllMovies, getMovie, getMovieDetails, getMoviesByYear, getMoviesByGenre } from '../controllers/movie';
 
 
 const router = Router();
